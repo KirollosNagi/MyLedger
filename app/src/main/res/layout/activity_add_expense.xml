@@ -1,0 +1,109 @@
+<!-- res/layout/activity_add_expense.xml -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="@drawable/background_gradient"
+    android:gravity="center"
+    android:layout_gravity="center_vertical">
+
+    <!-- Title -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Add Expense Page"
+        android:textSize="24sp"
+        android:textColor="@color/black"
+        android:layout_marginBottom="16dp"/>
+
+    <!-- Type (refundable/non-refundable) -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Type"
+        android:textColor="@color/black"/>
+
+    <Spinner
+        android:id="@+id/typeSpinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:entries="@array/type_options"/>
+
+    <!-- Category -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Category"
+        android:textColor="@color/black"/>
+
+    <Spinner
+        android:id="@+id/categorySpinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:entries="@array/category_options"/>
+
+    <!-- Description -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Description"
+        android:textColor="@color/black"/>
+
+    <EditText
+        android:id="@+id/descriptionEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter Description"
+        android:inputType="text"/>
+
+    <!-- Amount -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Amount"
+        android:textColor="@color/black"/>
+
+    <EditText
+        android:id="@+id/amountEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter Amount"
+        android:inputType="numberDecimal"/>
+
+    <!-- Percentage -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Percentage (for refundable)"
+        android:textColor="@color/black"/>
+
+    <EditText
+        android:id="@+id/percentageEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter Percentage"
+        android:inputType="numberDecimal"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/saveButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Save"
+            android:layout_marginEnd="8dp"/>
+
+        <Button
+            android:id="@+id/cancelButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Cancel"
+            android:layout_marginStart="8dp"/>
+    </LinearLayout>
+</LinearLayout>
