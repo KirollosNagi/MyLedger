@@ -1,0 +1,52 @@
+<!-- activity_balance_details.xml -->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/textViewBalanceTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Balance Details"
+        android:textSize="24sp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"/>
+
+    <TextView
+        android:id="@+id/textViewEGPBalance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="EGP Balance: 0.00"
+        android:textSize="18sp"
+        android:layout_below="@id/textViewBalanceTitle"
+        android:layout_marginTop="16dp"/>
+
+    <TextView
+        android:id="@+id/textViewUSDBalance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="USD Balance: 0.00"
+        android:textSize="18sp"
+        android:layout_below="@id/textViewEGPBalance"
+        android:layout_marginTop="16dp"/>
+
+    <TextView
+        android:id="@+id/textViewEuroBalance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Euro Balance: 0.00"
+        android:textSize="18sp"
+        android:layout_below="@id/textViewUSDBalance"
+        android:layout_marginTop="16dp"/>
+
+    <TextView
+        android:id="@+id/textViewAEDBalance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="AED Balance: 0.00"
+        android:textSize="18sp"
+        android:layout_below="@id/textViewEuroBalance"
+        android:layout_marginTop="16dp"/>
+</RelativeLayout>

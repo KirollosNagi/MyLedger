@@ -5,6 +5,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.ArrayAdapter
 import android.widget.Button
+import android.widget.EditText
 import android.widget.Spinner
 import androidx.appcompat.app.AppCompatActivity
 
@@ -12,6 +13,9 @@ class AddExpenseActivity : AppCompatActivity() {
 
     private lateinit var typeSpinner: Spinner
     private lateinit var categorySpinner: Spinner
+    private lateinit var percentageEditText: EditText
+    private lateinit var amountEditText: EditText
+    private lateinit var descriptionEditText: EditText
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -20,6 +24,9 @@ class AddExpenseActivity : AppCompatActivity() {
         // Initialize UI components
         typeSpinner = findViewById(R.id.typeSpinner)
         categorySpinner = findViewById(R.id.categorySpinner)
+        percentageEditText = findViewById(R.id.percentageEditText)
+        amountEditText = findViewById(R.id.amountEditText)
+        descriptionEditText = findViewById(R.id.descriptionEditText)
         val saveButton = findViewById<Button>(R.id.saveButton)
         val cancelButton = findViewById<Button>(R.id.cancelButton)
 
@@ -52,14 +59,18 @@ class AddExpenseActivity : AppCompatActivity() {
                 ExpenseType.REFUNDABLE
             else
                 ExpenseType.NON_REFUNDABLE
+            val enteredDescription = descriptionEditText.text.toString();
+            val enteredAmount = amountEditText.text.toString().toDoubleOrNull() ?: 0.0;
+            val enteredPercentage = percentageEditText.text.toString().toDoubleOrNull() ?: 0.0
             // You can also get other details like description, amount, etc. from EditText fields
 
             // Create an Expense object and pass it back to the MainActivity
             val newExpense = Expense(
                 type = selectedType,
                 category = selectedCategory,
-                description = "", // Get the description from EditText
-                amount = 0.0 // Get the amount from EditText
+                description = enteredDescription,
+                amount = enteredAmount,
+                percentage = enteredPercentage
             )
 
             val resultIntent = Intent().apply {

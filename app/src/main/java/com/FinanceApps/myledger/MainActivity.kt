@@ -28,7 +28,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun updateBalanceDisplay(balanceTextView: TextView) {
-        balanceTextView.text = "Balance: $$balance"
+        balanceTextView.text = "Balance: $balance EGP"
     }
 
 
@@ -38,13 +38,11 @@ class MainActivity : AppCompatActivity() {
             // Update balance if needed based on the added expense
             val addedExpense = data?.getParcelableExtra<Expense>("addedExpense")
             addedExpense?.let {
+                balance -= it.amount
                 if (it.type == ExpenseType.REFUNDABLE) {
                     // Adjust balance with the percentage if it's a refundable expense
                     val percentage = it.percentage ?: 0.0
-                    balance += it.amount * (percentage / 100)
-                } else {
-                    // Non-refundable expense
-                    balance -= it.amount
+                    balance += it.amount * percentage
                 }
                 updateBalanceDisplay(findViewById(R.id.balanceTextView))
             }
